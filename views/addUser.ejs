@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../public/CSS/style.css" />
+
+   <%- include('./components/headTag') -%>
+</head>
+<body style="background-color: #63598556">
+    <%- include('./components/navbar') -%>
+
+    
+        <!-- - Back to all users -->
+
+        <!-- <div class="container mt-2">
+          <a href="/" class="btn btn-secondary fw-bold ">&larr; Back</a>
+      </div> -->
+
+<div class="container mt-5" style="width: 40%; height: 150%; box-shadow: 5px 5px 3px 2px rgba(0, 0, 0, 0.329); border: 2px solid grey;border-radius: 5px; padding: 15px;">
+
+     <!-- - Alert msg -->
+     <% if(msg !="" ){%>
+      <div class="alert alert-success text-center " role="alert" id="addMsg">
+
+          <%=msg %>
+      </div>
+
+
+      <%} %>
+
+  <div class="container  text-dark fw-30 " >
+    <h3 style="font-size: 45px; text-align: center;">Add User Form</h3>
+<form action="/adduser" method="POST" >
+    <div class="form-group mt-3">
+      <label for="exampleInputEmail1" style="font-size: 30px;">Name</label>
+      <input type="text" class="form-control" autocomplete="none" id="exampleInputEmail1" aria-describedby="emailHelp" name="userName" placeholder="Enter User Name" required>
+     
+    </div>
+    <div class="form-group  mt-3">
+      <label for="exampleInputEmail1" style="font-size: 30px;">Email address</label>
+      <input type="email" class="form-control"  autocomplete="none" id="exampleInputEmail1" aria-describedby="emailHelp" name="userEmail" placeholder="Enter User Email">
+     
+    </div>
+    <div class="form-group  mt-3">
+      <label for="exampleInputPassword1" style="font-size: 30px;">Mobile</label>
+      <input type="number" class="form-control"  autocomplete="none" id="exampleInputPassword1" name="userNumber" placeholder="Enter User Contact ">
+
+    </div>
+    <div class="form-group  mt-3">
+        <label for="exampleInputEmail1" style="font-size: 30px;">Amount</label>
+        <input type="Amount" class="form-control"  autocomplete="none" id="exampleInputEmail1" aria-describedby="emailHelp" name="userAmount" placeholder="Enter Amount">
+
+    <button type="submit" class="btn btn-primary mt-3 text-center" style="width: 100%; background-color: blueviolet; border: blueviolet ;">Submit</button>
+  </form>
+</div>
+</div>
+
+
+    <%- include('./components/bootstrapScript') -%>
+    <script>
+        let alert = document.getElementById('addMsg');
+    setTimeout(() => {
+        alert.style.visibility = "hidden"
+    }, 2000)
+    </script>
+</body>
+</html>
